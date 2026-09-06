@@ -1,0 +1,39 @@
+name: RoboQuest checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npm run typecheck
+      - run: npm audit
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-results
+          path: test-results/
+          retention-days: 3
+  ros:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install -r backend/requirements.txt
+      - run: python -m unittest discover -s backend/tests
+      - run: docker build -t roboquest-ros backend
+      - name: Native description smoke check
+        run: docker run --rm --entrypoint bash roboquest-ros -c 'source /opt/ros/humble/setup.bash && source /home/rover/ws/install/setup.bash && ros2 pkg executables roboquest_description && xacro /home/rover/ws/install/roboquest_description/share/roboquest_description/urdf/rover.urdf > /tmp/robot.urdf'

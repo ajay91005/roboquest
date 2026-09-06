@@ -1,0 +1,154 @@
+.next-mission-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.next-mission-banner > svg,
+.mission-complete > svg {
+  color: #e9c16d;
+  flex-shrink: 0;
+}
+.next-mission-banner > div {
+  flex: 1;
+  min-width: 0;
+}
+.next-mission-banner h2 {
+  font-size: 19px;
+  margin: 5px 0;
+}
+.next-mission-banner small,
+.mission-progress {
+  font-size: 10px;
+  color: var(--muted);
+}
+.next-mission-banner p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.mission-progress,
+.mission-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.guided-lesson progress {
+  width: 100%;
+  height: 5px;
+  accent-color: var(--mint);
+  margin: 14px 0 22px;
+}
+.guided-lesson section {
+  min-height: 200px;
+}
+.guided-lesson h3 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.guided-lesson p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.guided-lesson fieldset {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.guided-lesson .checkpoint label {
+  font-size: 14px;
+  padding: 14px;
+  line-height: 1.6;
+}
+.guided-lesson .checkpoint label input {
+  flex-shrink: 0;
+}
+.mission-navigation {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.mission-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+}
+.mission-complete h3 {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.mission-complete p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.pid-challenge {
+  padding: 20px 0;
+  border-block: 1px solid var(--line);
+  margin: 18px 0;
+}
+.pid-challenge h3 {
+  font-size: 17px;
+  margin: 12px 0;
+}
+.pid-challenge dl {
+  display: flex;
+  gap: 28px;
+  margin: 16px 0;
+}
+.pid-challenge dt {
+  color: var(--muted);
+  font-size: 11px;
+}
+.pid-challenge dd {
+  font:
+    20px var(--font-geist-mono),
+    monospace;
+  margin: 6px 0;
+}
+.connection-form input[type="file"] {
+  max-width: 100%;
+  white-space: normal;
+}
+.import-confirmation {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.toast {
+  z-index: 100;
+}
+.modal .button-row {
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .next-mission-banner {
+    flex-wrap: wrap;
+  }
+  .next-mission-banner .primary-button {
+    margin-left: 42px;
+  }
+  .guided-lesson h3 {
+    font-size: 18px;
+  }
+  .guided-lesson p {
+    font-size: 14px;
+  }
+  .mission-complete h3 {
+    font-size: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

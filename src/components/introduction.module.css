@@ -1,0 +1,315 @@
+.introduction {
+  background: #111a1c;
+  color: #e4eee9;
+  min-height: 100vh;
+}
+.header {
+  height: 82px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2b3b38;
+}
+.header a,
+.footer a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header > a:last-child {
+  font-size: 13px;
+  color: #a0b5ac;
+}
+.brand {
+  font-size: 23px;
+  font-weight: 650;
+}
+.brand svg {
+  color: #82e8bf;
+}
+.main {
+  padding: 0;
+  max-width: none;
+}
+.hero {
+  min-height: 620px;
+  height: min(740px, 78vh);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.scene {
+  position: absolute;
+  inset: 0;
+}
+.scene :global(.robot-canvas) {
+  left: 33%;
+}
+.scene:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #111a1c 0%,
+    #111a1cf5 28%,
+    #111a1c88 48%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.copy {
+  position: relative;
+  z-index: 1;
+  width: 48%;
+  padding: 30px 0 30px 6%;
+  pointer-events: none;
+}
+.copy a {
+  pointer-events: auto;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  color: #8ce1b9;
+}
+.copy h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 650;
+  margin: 18px 0;
+}
+.copy h2 {
+  font-size: 28px;
+  font-weight: 450;
+  line-height: 1.35;
+}
+.copy p {
+  max-width: 430px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #b0c2b8;
+  margin: 20px 0 28px;
+}
+.start {
+  background: #82e8bf;
+  color: #143025;
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 650;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+.start:hover {
+  background: #adf7d6;
+}
+.promise {
+  display: block;
+  font-size: 11px;
+  color: #8aa298;
+  margin-top: 15px;
+}
+.robotLabel {
+  position: absolute;
+  right: 6%;
+  bottom: 45px;
+  color: #a9cbb9;
+  font: 11px var(--font-geist-mono);
+  pointer-events: none;
+}
+.robotLabel > span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #82e8bf;
+  margin-right: 9px;
+}
+.robotLabel small {
+  display: block;
+  font-size: 8px;
+  margin-top: 8px;
+  color: #718d7e;
+}
+.journey {
+  padding: 46px 6% 35px;
+  border-top: 1px solid #31473c;
+  background: #151f1c;
+  scroll-margin-top: 20px;
+}
+.heading {
+  max-width: 660px;
+}
+.heading h2 {
+  font-size: 29px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+.heading p,
+.steps p,
+.expectations p {
+  color: #9db1a5;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  padding: 37px 0;
+}
+.steps article {
+  border-top: 1px solid #344b3e;
+  padding-top: 22px;
+}
+.steps svg {
+  color: #d7c698;
+  margin-bottom: 16px;
+}
+.stepNumber {
+  float: right;
+  font: 11px var(--font-geist-mono);
+  color: #6f8f7b;
+}
+.steps h3,
+.expectations h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.expectations {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid #344b3e;
+  padding-top: 28px;
+}
+.expectations svg {
+  flex-shrink: 0;
+  color: #a4bfe3;
+}
+.expectations p {
+  max-width: 930px;
+  font-size: 12px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 6%;
+  font-size: 11px;
+  color: #779786;
+}
+@media (max-width: 900px) {
+  .copy {
+    width: 55%;
+  }
+  .copy h1 {
+    font-size: 48px;
+  }
+  .copy h2 {
+    font-size: 23px;
+  }
+  .copy p {
+    font-size: 13px;
+  }
+  .scene :global(.robot-canvas) {
+    left: 25%;
+  }
+  .steps {
+    gap: 25px;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    height: 67px;
+    padding: 0 22px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .header > a:last-child {
+    font-size: 11px;
+  }
+  .hero {
+    height: auto;
+    min-height: 750px;
+    align-items: flex-start;
+  }
+  .copy {
+    width: 100%;
+    padding: 36px 24px 0;
+  }
+  .copy h1 {
+    font-size: 44px;
+    margin: 14px 0;
+  }
+  .copy h2 {
+    font-size: 22px;
+  }
+  .copy p {
+    max-width: 420px;
+    margin: 14px 0 21px;
+  }
+  .eyebrow {
+    font-size: 9px;
+  }
+  .promise {
+    font-size: 10px;
+  }
+  .scene {
+    top: 410px;
+    height: 340px;
+  }
+  .scene :global(.robot-canvas) {
+    left: 0;
+  }
+  .scene:after {
+    background: linear-gradient(#111a1c, transparent 24%);
+  }
+  .robotLabel {
+    bottom: 19px;
+    right: 22px;
+    font-size: 9px;
+  }
+  .journey {
+    padding: 31px 24px;
+  }
+  .heading h2 {
+    font-size: 24px;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 0;
+  }
+  .steps article {
+    padding-top: 18px;
+  }
+  .heading p,
+  .steps p {
+    font-size: 13px;
+  }
+  .footer {
+    padding: 22px 24px;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+}
+@media (max-width: 360px) {
+  .copy h1 {
+    font-size: 39px;
+  }
+  .hero {
+    min-height: 800px;
+  }
+  .scene {
+    top: 460px;
+  }
+  .copy p {
+    font-size: 12px;
+  }
+}
